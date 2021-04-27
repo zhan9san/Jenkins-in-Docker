@@ -1,0 +1,11 @@
+ansible:1.1
+authorize-project:1.4.0
+configuration-as-code:1.47
+credentials:2.3.18
+credentials-binding:latest
+docker-plugin
+job-dsl:1.77
+ldap:2.6
+matrix-auth:2.6.6
+sectioned-view:1.25
+workflow-aggregator:2.6
