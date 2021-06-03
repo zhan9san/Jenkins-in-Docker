@@ -1,13 +1,14 @@
 ansible:1.1
 authorize-project:1.4.0
 build-name-setter:2.2.0
-configuration-as-code:1.47
-credentials:2.3.18
+configuration-as-code:1.51
+credentials:2.5
 credentials-binding:latest
 docker-plugin:1.2.2
 docker-workflow:1.26
 git:4.7.1
 job-dsl:1.77
+kubernetes::1.29.6
 ldap:2.6
 matrix-auth:2.6.6
 sectioned-view:1.25
