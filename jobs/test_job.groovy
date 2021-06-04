@@ -4,6 +4,9 @@ multibranchPipelineJob('test-pipeline') {
       source {
         git {
           remote('https://github.com/zhan9san/test-pipeline')
+          traits {
+            gitBranchDiscovery()
+          }
         }
       }
       strategy {
@@ -13,6 +16,11 @@ multibranchPipelineJob('test-pipeline') {
           }
         }
       }
+    }
+  }
+  factory {
+    workflowBranchProjectFactory {
+      scriptPath('kubernetes-plugin/Jenkinsfile')
     }
   }
 }
