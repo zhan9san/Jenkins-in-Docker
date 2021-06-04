@@ -1,9 +1,8 @@
 multibranchPipelineJob('test-pipeline') {
   branchSources {
-    branchSources{
+    branchSource{
       source {
         git {
-          id('123456789') // IMPORTANT: use a constant and unique identifier
           remote('https://github.com/zhan9san/test-pipeline')
         }
       }
