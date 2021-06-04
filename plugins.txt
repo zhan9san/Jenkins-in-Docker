@@ -8,7 +8,7 @@ docker-plugin:1.2.2
 docker-workflow:1.26
 git:4.7.1
 job-dsl:1.77
-kubernetes::1.29.6
+kubernetes:1.29.6
 ldap:2.6
 matrix-auth:2.6.6
 sectioned-view:1.25

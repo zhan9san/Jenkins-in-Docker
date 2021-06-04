@@ -1,3 +1,12 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - string:
+          id: "jenkins-token-kubernetes"
+          scope: GLOBAL
+          secret: "eyJhbGciOiJSUzI1NiIsImtpZCI6Ikt2LUEyOXBiaHlBYjdMUWloTU1HTEZUVDE1X1VCNXBDdmJBSnBVSEl2M00ifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLXBsdWdpbiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJqZW5raW5zLXRva2VuLXdyZ2wyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImplbmtpbnMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI0NWFhODkxYS04N2Y2LTQ5MDAtOTdiZC1lYzdkNzUzMTAwZTQiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1wbHVnaW46amVua2lucyJ9.OD6RndaSREpE1ex6ViWGoa4C76xmlb_DYirgQWESVo7etY-Ys6d4RNJLXJGVKCTTCbXv87lBZhbolIT3TznSuwJAeSQUHXwVMOR8q2zLlQofCk0Ecaxoy4-9j_SPUBT0uyjowjCwDKvovrSKnQCrwI92t2jL23ECKCDxsi9jLKiIscH5kdwk73huVyIOP35JvBwItHqKWcLi8upiCuYPNH9A1I26z7pw53fnr-Nfas5TUjrZbyBazFP47SQyG30e2kE8f9aXJ9fcyzxIWwtTjcAF379TuKvCXtdIK_lEVskI4XMFSPpZWLS4hcyqd90CfyVRVorqn2S1DunG6xd4Dw"
+
 jenkins:
   securityRealm:
     local:
@@ -12,6 +21,35 @@ jenkins:
         - "Overall/Read:authenticated"
   remotingSecurity:
     enabled: true
+  clouds:
+    - kubernetes:
+        containerCap: 10
+        containerCapStr: "10"
+        credentialsId: "jenkins-token-kubernetes"
+        jenkinsUrl: "http://${JENKINS_DOMAIN}:8080/"
+        name: "kubernetes"
+        namespace: "kubernetes-plugin"
+        serverCertificate: |-
+          -----BEGIN CERTIFICATE-----
+          MIIDBjCCAe6gAwIBAgIBATANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwptaW5p
+          a3ViZUNBMB4XDTIxMDYwMjA1MTc1N1oXDTMxMDYwMTA1MTc1N1owFTETMBEGA1UE
+          AxMKbWluaWt1YmVDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOtI
+          bJELbACOaylDNXB93vCRZTUbQ5wM+xHh+p+wYaOEfYum/kTTUjTEBqBw6k2pe8eS
+          ujSOVHyeFNs51O0tTobf6uNr8Sm8HbiMEjRrg0bXzabO3HmNcaRyiRqRdEDkYTHn
+          2iwlAvs613VriCX5PC7zqENDoakqCUs/+hOs6bcSCWMsm03TviAY3n955CEUQNR1
+          OUXte/Ph4OjML3UBgOMRJiTjCmyFi7KG/3kVj3hActXX2NmTokrIZqaFynUyVGiW
+          fzGujnAByCsb1q7NvCAkJQVc4y0KswdeQcbnzTy3BlnKLUh1bEjJoLt1Gy8mrvHk
+          aOHn7V/E2v5Vv97NX6cCAwEAAaNhMF8wDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQW
+          MBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQW
+          BBR0WMhraYkCBXBzESgcx03cpQ/u4jANBgkqhkiG9w0BAQsFAAOCAQEARAdsuVlo
+          697882mj5QF84bB9xW+VoyY4Bakie64gOyh+O/CAAY+MSiTencQir90zK4fOWNLb
+          tw0j9PpGUbWu/LDYf3q1AhVrIazGwAIXE9QXWL3BcwLe6JK0jxLl16+Fq8dyPhM3
+          xM74JHFfUNEXwIszQgQEXxHg2BEnkEAjP0O8650yL6M4o8CZ5lHuvwZpDesYAJm1
+          ty2z3+kGumYceYi13d73N2mHWCT/mWx4eVhl10byIcUm2IQ/iJKdrdOAb4tGHnvu
+          kxRrpgmxi6HbvKV6tZWEegp1dQoKXNEoC5PlgLjLwrdP9D9G5SlNT9ZzcM7KKUlD
+          8i4+GYt5BuwtEA==
+          -----END CERTIFICATE-----
+        serverUrl: "https://10.66.40.144:8443"
 
 security:
   queueItemAuthenticator:
@@ -21,4 +59,7 @@ security:
 
 unclassified:
   location:
-    url: http://127.0.0.1:8080/
+    url: http://${JENKINS_DOMAIN}:8080/
+
+jobs:
+  - file: /var/jenkins_home/seedjob.groovy
