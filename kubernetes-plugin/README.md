@@ -17,7 +17,8 @@ git clone github.com:jenkinsci/kubernetes-plugin.git
 ```bash
 cd kubernetes-plugin
 kubectl create namespace kubernetes-plugin
-kubectl config set-context $(kubectl config current-context) --namespace=kubernetes-plugin
+kubectl config set-context jks --cluster=minikube --namespace=kubernetes-plugin --user=minikube
+kubectl config use-context jks
 kubectl create -f src/main/kubernetes/service-account.yml
 ```
 
