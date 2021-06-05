@@ -13,6 +13,10 @@ minutes for both a new team member and experienced engineers to set up a new
 Jenkins instance locally  which is exactly the same as that in production
 environment.
 
+Everythong-as-code that enables someone who has knowledge of Jenkins and a platform to run a Jenkins instance so that
+someone else who has neither extensive knowledge of Jenkins or the way it needs
+to be run on the platform can use it.
+
 ## How to set it up?
 
 1. Clone this project
