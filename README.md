@@ -80,6 +80,18 @@ Ensure the token and cert of servive account `jenkins` are set correctly.
 
 [How to get token and cert](https://kubernetes.io/docs/reference/access-authn-authz/authentication/)
 
+#### Token
+
+```bash
+kubectl get secret $(kubectl get sa jenkins -o yaml | yq e '.secrets[0].name' -) -o yaml | yq e '.data.token' - | base64 -d
+```
+
+#### Cert
+
+```bash
+kubectl get secret $(kubectl get sa jenkins -o yaml | yq e '.secrets[0].name' -) -o yaml | yq e '.data."ca.crt"' - | base64 -d
+```
+
 There are two options to change these two configurations.
 
 1. Web UI.
@@ -91,8 +103,8 @@ There are two options to change these two configurations.
 2. `casc`. Update the `casc.yaml`(**Recomended**)
    1. `credentials` -> `system` -> `domainCredentials` -> `credentials`
    -> `string` -> `secret`
-   2. `jenkins` -> `clouds` -> `kubernetes` -> `serverCertificate`
-   3. Reload configuration
+   1. `jenkins` -> `clouds` -> `kubernetes` -> `serverCertificate`
+   2. Reload configuration
 
 ## Reference  
 

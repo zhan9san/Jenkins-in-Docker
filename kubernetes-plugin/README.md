@@ -16,7 +16,7 @@ minikube start --driver=docker --listen-address=0.0.0.0 --apiserver-ips=192.168.
 ### 2. Get provisioning code
 
 ```bash
-git clone github.com:jenkinsci/kubernetes-plugin.git
+git clone https://github.com/jenkinsci/kubernetes-plugin.git
 ```
 
 ### 3. Provision
