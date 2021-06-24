@@ -1,6 +1,8 @@
 ansible:1.1
 authorize-project:1.4.0
+bitbucket:1.1.29
 build-name-setter:2.2.0
+cloudbees-bitbucket-branch-source:2.9.9
 configuration-as-code:1.51
 credentials:2.5
 credentials-binding:latest

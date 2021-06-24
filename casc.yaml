@@ -6,6 +6,11 @@ credentials:
           id: "jenkins-token-kubernetes"
           scope: GLOBAL
           secret: "eyJhbGciOiJSUzI1NiIsImtpZCI6Ikt2LUEyOXBiaHlBYjdMUWloTU1HTEZUVDE1X1VCNXBDdmJBSnBVSEl2M00ifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLXBsdWdpbiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJqZW5raW5zLXRva2VuLXdyZ2wyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImplbmtpbnMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI0NWFhODkxYS04N2Y2LTQ5MDAtOTdiZC1lYzdkNzUzMTAwZTQiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1wbHVnaW46amVua2lucyJ9.OD6RndaSREpE1ex6ViWGoa4C76xmlb_DYirgQWESVo7etY-Ys6d4RNJLXJGVKCTTCbXv87lBZhbolIT3TznSuwJAeSQUHXwVMOR8q2zLlQofCk0Ecaxoy4-9j_SPUBT0uyjowjCwDKvovrSKnQCrwI92t2jL23ECKCDxsi9jLKiIscH5kdwk73huVyIOP35JvBwItHqKWcLi8upiCuYPNH9A1I26z7pw53fnr-Nfas5TUjrZbyBazFP47SQyG30e2kE8f9aXJ9fcyzxIWwtTjcAF379TuKvCXtdIK_lEVskI4XMFSPpZWLS4hcyqd90CfyVRVorqn2S1DunG6xd4Dw"
+      - usernamePassword:
+          id: "username-example-bitbucket"
+          password: "OVERWRITE_ME"
+          scope: GLOBAL
+          username: "OVERWRITE_ME"
 
 jenkins:
   securityRealm:
@@ -58,6 +63,21 @@ security:
         strategy: triggeringUsersAuthorizationStrategy
 
 unclassified:
+  bitbucketEndpointConfiguration:
+    endpoints:
+    - bitbucketCloudEndpoint:
+        enableCache: false
+        manageHooks: false
+        repositoriesCacheDuration: 0
+        teamCacheDuration: 0
+    - bitbucketServerEndpoint:
+        callCanMerge: false
+        callChanges: false
+        credentialsId: "username-example-bitbucket"
+        displayName: "bitbucket.example.com"
+        manageHooks: true
+        serverUrl: "https://bitbucket.example.com"
+        serverVersion: VERSION_6
   location:
     url: http://${JENKINS_DOMAIN}:8080/
 
