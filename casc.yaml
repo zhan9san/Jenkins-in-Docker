@@ -78,6 +78,7 @@ unclassified:
         manageHooks: true
         serverUrl: "${BITBUCKET_SERVER_URL}"
         serverVersion: VERSION_6
+        webhookImplementation: NATIVE
   location:
     url: http://${JENKINS_DOMAIN}:${JENKINS_HTTP_PORT}/
 
