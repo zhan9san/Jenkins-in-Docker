@@ -56,7 +56,7 @@ to be run on the platform can use it.
 
 5. Access Jenkins
 
-   `http://<JENKINS_DOMAIN>:8080`
+   `http://<JENKINS_DOMAIN>:<JENKINS_HTTP_PORT>`
 
 ## Monitor Jenkins
 

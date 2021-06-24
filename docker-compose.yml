@@ -3,13 +3,10 @@ services:
   jenkins:
     build: .
     ports:
-      - '8080:8080'
-      - '50000:50000'
-    # volumes:
-        # - jenkins-home:/var/jenkins_home
+      - '7080:7080'
+      - '40000:40000'
+    volumes:
+      - ./casc.yaml:/var/jenkins_home/casc.yaml
     container_name: jenkins
     env_file:
       - jks.env
-
-volumes:
-  jenkins-home:
