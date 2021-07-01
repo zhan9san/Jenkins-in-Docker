@@ -10,9 +10,9 @@ docker-plugin:1.2.2
 docker-workflow:1.26
 git:4.7.2
 job-dsl:1.77
-kubernetes:1.29.6
-ldap:2.6
-matrix-auth:2.6.6
+kubernetes:1.30.0
+ldap:2.7
+matrix-auth:2.6.7
 sectioned-view:1.25
-throttle-concurrents:2.2
+throttle-concurrents:2.3
 workflow-aggregator:2.6

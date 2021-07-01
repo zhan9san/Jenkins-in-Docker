@@ -54,7 +54,8 @@ jenkins:
           kxRrpgmxi6HbvKV6tZWEegp1dQoKXNEoC5PlgLjLwrdP9D9G5SlNT9ZzcM7KKUlD
           8i4+GYt5BuwtEA==
           -----END CERTIFICATE-----
-        serverUrl: "https://10.66.40.144:8443"
+        serverUrl: "https://${JENKINS_DOMAIN}:8443"
+        jenkinsTunnel: "${JENKINS_DOMAIN}:${JENKINS_SLAVE_AGENT_PORT}"
 
 security:
   queueItemAuthenticator:
