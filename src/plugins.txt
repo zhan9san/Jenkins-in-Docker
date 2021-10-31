@@ -1,5 +1,6 @@
 ansible:1.1
 authorize-project:1.4.0
+basic-branch-build-strategies:1.3.2
 bitbucket:1.1.29
 build-name-setter:2.2.0
 cloudbees-bitbucket-branch-source:2.9.9
